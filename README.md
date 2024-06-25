@@ -2,12 +2,24 @@
 
 ## Prerequisites
 
-* Docker installed
+* Docker installed - Should display the current Docker version
 
 ```bash
-$ docker -v 
+docker -v
 ```
-Should display the version of Docker installed
+
+* Existence of the `kong-net` network
+
+```bash
+docker network create --subnet=172.18.0.0/16 kong-net
+```
+
+* Existence of the `pgdata` and `esdata` volumes
+
+```bash
+docker volume create pgdata
+docker volume create esdata
+```
 
 ## Repository structure
 
